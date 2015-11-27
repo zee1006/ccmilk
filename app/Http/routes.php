@@ -11,15 +11,11 @@
 |
 */
 
-$app->get('/', function () use ($app) {
+$app->get('/welcome', function () use ($app) {
     return $app->welcome();
 });
 
 
-$app->get('/aa', function () {
-    return 'Hello World';
-});
-
-$app->get('/bb', function() {
-	return 'Hello World again';
+$app->get('/', function ()  {
+    return view('main');
 });
