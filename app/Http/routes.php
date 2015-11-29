@@ -19,3 +19,10 @@ $app->get('/welcome', function () use ($app) {
 $app->get('/', function ()  {
     return view('main');
 });
+
+
+
+$app->get('/getProductList', function ()  {
+	return DB::select("SELECT * FROM Product");    
+});
+

@@ -1,0 +1,21 @@
+this.current = newGallery || 0;
+
+reviewForm.$valid && reviewCtrl.addReview(product)
+
+参数是函数只是回调函数 比如
+app.controller('StoreController', function(){
+   
+    
+  });
+  
+把对象作为回调函数的参数才是dependency injection，$http注入进去了 比如 
+
+ app.controller('StoreController', function($http){
+    
+    
+  });
+  
+  
+  TODO:
+  SSL cleardb 
+
