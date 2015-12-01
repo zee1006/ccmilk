@@ -20,6 +20,10 @@ $app->get('/', function ()  {
     return view('main');
 });
 
+$app->get('/login', function ()  {
+    return view('login');
+});
+
 
 
 $app->get('/getProductList', function ()  {
