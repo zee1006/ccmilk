@@ -33,38 +33,19 @@
                         <div class="panel-heading">
                             <h3 class="panel-title">产品</h3>
                         </div>
-                        <div style="height: 400px" class="panel-body">
-							<div class="row" data-ng-repeat="product in store.productList">	
-								<div class="col-md-8">
-									{{product.brand}} {{product.specs}} {{product.pack_style}} {{product.weight}}g
-							
-								</div>
-								<div class="col-md-2">
-									{{product.price / 100 }}元
-							
-								</div>
-								<div class="col-md-2">
-									<div class="btn-group" role="group" >
-												<button class="btn btn-default btn-sm" ng-click="product.countBought = product.countBought + 1" type="button" class="btn btn-default">+</button>
-												<button class="btn btn-default btn-sm" ng-click="product.countBought > 0 ? product.countBought = product.countBought - 1 : 0" type="button" class="btn btn-default">-</button>
-											</div>
-                           
-							
-								</div>
-							</div>
-								<table class="table table-striped">
-									
-									<tr data-ng-repeat="product in store.productList">
-										<td>{{product.brand}} {{product.specs}} {{product.pack_style}} {{product.weight}}g</td>
-										<td>{{product.price / 100 }}元</td> 
-										<td><div class="btn-group" role="group" >
-												<button class="btn btn-default btn-sm" ng-click="product.countBought = product.countBought + 1" type="button" class="btn btn-default">+</button>
-												<button class="btn btn-default btn-sm" ng-click="product.countBought > 0 ? product.countBought = product.countBought - 1 : 0" type="button" class="btn btn-default">-</button>
-											</div>
-										</td>
-									</tr>
-								</table>
-                               
+                        <div style="height: 400px" class="panel-body">						
+							<table class="table" style="height: 100px">
+								
+								<tr data-ng-repeat="product in store.productList">
+									<td>{{product.brand}} {{product.specs}} {{product.pack_style}} {{product.weight}}g</td>
+									<td>{{product.price / 100 }}元</td> 
+									<td><div class="btn-group" role="group" >
+											<button class="btn btn-default btn-sm" ng-click="product.countBought = product.countBought + 1" type="button" class="btn btn-default">+</button>
+											<button class="btn btn-default btn-sm" ng-click="product.countBought > 0 ? product.countBought = product.countBought - 1 : 0" type="button" class="btn btn-default">-</button>
+										</div>
+									</td>
+								</tr>
+							</table>                              
                                 
                             
                             <button style="position: absolute; bottom: 40px" class="btn btn-default" type="submit">下单</button>
