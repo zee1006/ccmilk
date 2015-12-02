@@ -33,21 +33,23 @@
                         <div class="panel-heading">
                             <h3 class="panel-title">产品</h3>
                         </div>
-                        <div style="height: 400px" class="panel-body">						
-							<table class="table" style="height: 100px">
+                        <div style="height: 420px" class="panel-body">		
+			
+							<table class="table" style="overflow: auto; display: block; height: 328px;">
 								
-								<tr data-ng-repeat="product in store.productList">
-									<td>{{product.brand}} {{product.specs}} {{product.pack_style}} {{product.weight}}g</td>
-									<td>{{product.price / 100 }}元</td> 
-									<td><div class="btn-group" role="group" >
-											<button class="btn btn-default btn-sm" ng-click="product.countBought = product.countBought + 1" type="button" class="btn btn-default">+</button>
+								<tr  data-ng-repeat="product in store.productList">
+									<td style="width: 300px;">{{product.brand}} {{product.specs}} {{product.pack_style}} {{product.weight}}g</td>
+									<td style="width: 100px;">{{product.price / 100 }}元</td> 
+									<td style="width: 105px;">
+										<div class="btn-group" role="group" >
+											<button class="btn btn-default btn-sm" ng-click="store.addOneProduct(product)" type="button" class="btn btn-default">+</button>
 											<button class="btn btn-default btn-sm" ng-click="product.countBought > 0 ? product.countBought = product.countBought - 1 : 0" type="button" class="btn btn-default">-</button>
 										</div>
 									</td>
 								</tr>
 							</table>                              
                                 
-                            
+                          
                             <button style="position: absolute; bottom: 40px" class="btn btn-default" type="submit">下单</button>
                         </div>
                     </div>
@@ -59,8 +61,17 @@
                         </div>
                         <div style="height: 400px" class="panel-body">
                             <div data-ng-repeat="product in store.productList | filter : store.boughtMoreThan0">
-                                {{product.brand}} {{product.specs}} {{product.pack_style}} {{product.weight}}g &nbsp;&nbsp;&nbsp;&nbsp;{{product.price * product.countBought / 100 }}元
+								<span class="pull-left" style=" width: 290px;">{{product.brand}} {{product.specs}} {{product.pack_style}} {{product.weight}}g</span>
+								<span class="pull-left" style=" width: 60px;">&times;{{product.countBought}}</span>
+								<span class="pull-left" style=" width: 100px;">{{product.price * product.countBought / 100 }}元</span>                                
                             </div>
+							
+							<br style="clear: both;">
+							<br>							
+							
+							<div ng-show="store.calculateTotalPrice((store.productList | filter : store.boughtMoreThan0))">
+								共计： {{store.calculateTotalPrice((store.productList | filter : store.boughtMoreThan0))}}元
+							</div>
 
                         </div>
                     </div>

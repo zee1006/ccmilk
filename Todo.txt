@@ -16,6 +16,11 @@ app.controller('StoreController', function(){
   });
   
   
+  http://caniuse.com/
+  html5test.com
+  
+  
   TODO:
   SSL cleardb 
+
 

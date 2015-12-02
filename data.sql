@@ -26,20 +26,21 @@ CREATE TABLE IF NOT EXISTS `product` (
   `volume` int(10) DEFAULT NULL COMMENT 'cubic centimeter  (description)',
   `price` int(10) NOT NULL COMMENT 'cent',
   `images` varchar(50) DEFAULT NULL COMMENT 'base64',
+  `pack_type` tinyint(4) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=100079 DEFAULT CHARSET=utf8;
 
 -- Exportiere Daten aus Tabelle heroku_ab63a649bb00246.product: ~8 rows (ungefähr)
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-REPLACE INTO `product` (`id`, `category`, `brand`, `specs`, `pack_style`, `weight`, `volume`, `price`, `images`) VALUES
-	(100008, '奶粉', '爱他美', 'pre', '桶装', 800, NULL, 19000, NULL),
-	(100018, '奶粉', '爱他美', '1段', '桶装', 800, NULL, 19000, NULL),
-	(100028, '奶粉', '爱他美', '2段', '桶装', 800, NULL, 19000, NULL),
-	(100038, '奶粉', '爱他美', '3段', '桶装', 800, NULL, 19000, NULL),
-	(100048, '奶粉', '喜宝', 'pre Bio Combiotik', '盒装', 600, NULL, 14000, NULL),
-	(100058, '奶粉', '喜宝', '1段 Bio Combiotik', '盒装', 600, NULL, 14000, NULL),
-	(100068, '奶粉', '喜宝', '2段 Bio Combiotik', '盒装', 600, NULL, 14000, NULL),
-	(100078, '奶粉', '喜宝', '3段 Bio Combiotik', '盒装', 600, NULL, 14000, NULL);
+REPLACE INTO `product` (`id`, `category`, `brand`, `specs`, `pack_style`, `weight`, `volume`, `price`, `images`, `pack_type`) VALUES
+	(100008, '奶粉', '爱他美', 'pre', '桶装', 800, NULL, 19000, NULL, 1),
+	(100018, '奶粉', '爱他美', '1段', '桶装', 800, NULL, 19000, NULL, 1),
+	(100028, '奶粉', '爱他美', '2段', '桶装', 800, NULL, 19000, NULL, 1),
+	(100038, '奶粉', '爱他美', '3段', '桶装', 800, NULL, 19000, NULL, 1),
+	(100048, '奶粉', '喜宝', 'pre Bio Combiotik', '盒装', 600, NULL, 14000, NULL, 1),
+	(100058, '奶粉', '喜宝', '1段 Bio Combiotik', '盒装', 600, NULL, 14000, NULL, 1),
+	(100068, '奶粉', '喜宝', '2段 Bio Combiotik', '盒装', 600, NULL, 14000, NULL, 1),
+	(100078, '奶粉', '喜宝', '3段 Bio Combiotik', '盒装', 600, NULL, 14000, NULL, 1);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
