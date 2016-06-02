@@ -31,7 +31,7 @@
                 <div class="col-md-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">产品</h3>
+                            <h3 class="panel-title">产品aaa</h3>
                         </div>
                         <div style="height: 420px" class="panel-body">		
 			
